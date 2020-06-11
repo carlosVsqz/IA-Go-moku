@@ -108,6 +108,11 @@ def get_models():
         model_select[curr_player].load_models(dir="Model/PolicyValueNet_from_junxiaosong")
         res = model_select[curr_player].all_model_name
         return jsonify(res)
+    
+
+@bp.route("/rules", methods=["GET"])
+def get_rules():
+    return render_template('rules.html')
 
 
 @bp.route("/records", methods=['POST'])
